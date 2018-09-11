@@ -1,11 +1,16 @@
 %h1 Portfolio Items
 
+= link_to('Create new', new_portfolio_path)
+
 = @portfolio_items.each do |item|
   %p 
-    =item.title
+    = link_to(item.title, portfolio_path(item.id))
     %br
     =item.subtitle
     %br
     =item.body
     %br
-    =image_tag item.thumb_image
+    =image_tag item.thumb_image unless item.thumb_image.nil?
+    %br
+    = link_to('Edit item', edit_portfolio_path(item.id))
+    = link_to 'Remove', item, method: :delete, data: { confirm: 'Are you sure?' }
