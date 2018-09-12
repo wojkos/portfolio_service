@@ -48,7 +48,7 @@ class PortfoliosController < ApplicationController
 
   private
     def set_portfolio_item
-      @portfolio_item = Portfolio.find(params[:id])
+      @portfolio_item = Portfolio.friendly.find(params[:id])
     end
 
     def portfolio_item_params
