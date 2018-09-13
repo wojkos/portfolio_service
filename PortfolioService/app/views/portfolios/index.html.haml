@@ -4,8 +4,7 @@
 
 = @portfolio_items.each do |item|
   %p 
-    = link_to(item.title, portfolio_path(item.id))
-    -# = link_to(item.title, portfolio_show_path(item.id))
+    = link_to(item.title, portfolio_show_path(item))
     %br
     =item.subtitle
     %br
@@ -13,5 +12,5 @@
     %br
     =image_tag item.thumb_image unless item.thumb_image.nil?
     %br
-    = link_to('Edit item', edit_portfolio_path(item.id))
+    = link_to('Edit item', edit_portfolio_path(item))
     = link_to 'Remove', item, method: :delete, data: { confirm: 'Are you sure?' }
