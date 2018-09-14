@@ -5,10 +5,27 @@ Skill.create!(title: 'Vue', skill_percent: 30 )
 
 puts 'Created 4 skills'
 
+3.times do |topic|
+  Topic.create!(
+    title: "Topic #{topic}"
+  )
+end
+
+puts 'Created 3 topics'
+
 10.times do |post|
+  case post
+  when 0..3
+    @topic = Topic.find(1)
+  when 4..6
+    @topic = Topic.find(2)
+  when 7..9
+    @topic = Topic.find(3)
+  end
   Post.create!(
     title: "My post title #{post}",
-    body: 'Lorem ipsum doloros edum noe dritut bre. Goden nolo fis est duri.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis eros eget justo facilisis tempus id id risus. Pellentesque orci est, pulvinar in vestibulum eu, mattis et nulla. Praesent bibendum nisl eget justo bibendum blandit. Fusce sit amet erat sed quam finibus fermentum in nec risus. Sed dui eros, convallis nec fermentum imperdiet, volutpat venenatis sapien. Aliquam porta arcu in placerat malesuada. Integer a sagittis neque. Fusce suscipit eget mauris quis auctor. Cras nec risus nec nisl convallis viverra. Vestibulum convallis odio a luctus scelerisque. Phasellus sed pretium mauris. Mauris non ante nec turpis viverra sollicitudin.'
+    body: 'Lorem ipsum doloros edum noe dritut bre. Goden nolo fis est duri.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis eros eget justo facilisis tempus id id risus. Pellentesque orci est, pulvinar in vestibulum eu, mattis et nulla. Praesent bibendum nisl eget justo bibendum blandit. Fusce sit amet erat sed quam finibus fermentum in nec risus. Sed dui eros, convallis nec fermentum imperdiet, volutpat venenatis sapien. Aliquam porta arcu in placerat malesuada. Integer a sagittis neque. Fusce suscipit eget mauris quis auctor. Cras nec risus nec nisl convallis viverra. Vestibulum convallis odio a luctus scelerisque. Phasellus sed pretium mauris. Mauris non ante nec turpis viverra sollicitudin.',
+    topic_id: @topic.id
   )
 end
 
