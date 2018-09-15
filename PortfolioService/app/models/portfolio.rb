@@ -1,4 +1,5 @@
 class Portfolio < ApplicationRecord
+  include Placeholder
   extend FriendlyId
   friendly_id :title, use: :slugged
   validates_presence_of :title, :body, :main_image, :thumb_image
@@ -8,7 +9,7 @@ class Portfolio < ApplicationRecord
   after_initialize :set_defaults_images
 
   def set_defaults_images
-    self.main_image ||= 'http://placehold.it/600x400'
-    self.thumb_image ||= 'http://placehold.it/350x200'
+    self.main_image ||= Placeholder.image_generator(600, 400)
+    self.thumb_image ||= Placeholder.image_generator(300, 200)
   end
 end
