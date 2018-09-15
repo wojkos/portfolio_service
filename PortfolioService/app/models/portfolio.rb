@@ -2,6 +2,7 @@ class Portfolio < ApplicationRecord
   include Placeholder
   extend FriendlyId
   friendly_id :title, use: :slugged
+  has_many :technologies
   validates_presence_of :title, :body, :main_image, :thumb_image
 
   scope :ruby_on_rails_portfolio_items, -> { where(subtitle: 'Ruby on Rails') }
