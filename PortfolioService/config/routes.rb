@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     end
   end
   get 'blog', to: 'posts#index'
-
+  
   root to: 'pages#home'
+  devise_for :users
   get '*path', to: redirect('/')
 end
