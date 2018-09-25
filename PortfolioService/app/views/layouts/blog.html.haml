@@ -4,13 +4,14 @@
     %title #{@page_title}
     = csrf_meta_tags
     %meta{content: @seo_keywords, name: "keywords"}/
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'posts', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = render 'shared/navbar', location: 'top'
     %p.notice= notice
     %p.alert= alert
+    %h2 BLOG
     = yield
+    = render 'shared/navbar', location: 'bottom'
     %hr
     = params.inspect
     %hr
