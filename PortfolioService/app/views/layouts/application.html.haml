@@ -17,5 +17,6 @@
     %hr
     = params.inspect
     %hr
-    %p Thanks, for visit from #{session[:source]}
+    - if session[:source]
+      %p Thanks, for visit from #{session[:source]}
   
