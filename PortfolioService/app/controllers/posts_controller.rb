@@ -3,9 +3,12 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @page_title = 'My blog | Wojciech Kostański'
   end
 
-  def show; end
+  def show
+    @page_title = @post.title
+  end
 
   def new
     @post = Post.new

@@ -1,8 +1,9 @@
 !!!
 %html
   %head
-    %title PortfolioService
+    %title #{@page_title}
     = csrf_meta_tags
+    %meta{content: @seo_keywords, name: "keywords"}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
