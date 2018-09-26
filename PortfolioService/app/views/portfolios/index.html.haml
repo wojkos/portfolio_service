@@ -2,15 +2,4 @@
 
 = link_to('Create new', new_portfolio_path)
 
-= @portfolio_items.each do |item|
-  %p 
-    = link_to(item.title, portfolio_show_path(item))
-    %br
-    =item.subtitle
-    %br
-    =item.body
-    %br
-    =image_tag item.thumb_image unless item.thumb_image.nil?
-    %br
-    = link_to('Edit item', edit_portfolio_path(item))
-    = link_to 'Remove', item, method: :delete, data: { confirm: 'Are you sure?' }
+= render partial: 'portfolio_item', collection: @portfolio_items
