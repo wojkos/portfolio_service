@@ -15,4 +15,8 @@ module ApplicationHelper
       end
     end
   end
+  
+  def copyright_generator
+    WojtekViewTool::Renderer.copyright('Wojtek Kostański', 'All right reserved')
+  end
 end
