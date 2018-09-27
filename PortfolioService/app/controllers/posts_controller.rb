@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_status]
   layout 'blog'
+  access all: [:show, :index], user: {expect: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   def index
     @posts = Post.all
