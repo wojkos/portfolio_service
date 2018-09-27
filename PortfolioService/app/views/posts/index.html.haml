@@ -1,7 +1,7 @@
 %p#notice
   = notice
 %h1 Posts
-= link_to 'New Post', new_post_path
+= link_to('New Post', new_post_path) if logged_in?(:site_admin)
 %br
 %table
   %thead
