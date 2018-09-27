@@ -1,5 +1,13 @@
 %h1 Pages#contact
-%p Find me in app/views/pages/contact.html.erb
-
-%p 
-  = number_to_phone('123453234')
+.row
+  .col-md-6
+    %h3 Office Address
+    %p Some adrress, 00-000 Warsaw
+    %h3 Phone
+    %p 
+      = number_to_phone('123453234')
+    %h3 Email
+    %p 
+      = mail_to("me@domain.com", 'Email me', subject: 'Portfolio contact')
+  .col-md-6
+    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "450", :src => "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.6215651659727!2d20.986305315798084!3d52.268416779767264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6841518592c7f220!2sPark+Stefana+%C5%BBeromskiego!5e0!3m2!1spl!2spl!4v1538080075307", :style => "border:0", :width => "600"}

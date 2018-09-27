@@ -46,7 +46,7 @@ body {
 }
 
 .cover-container {
-    max-width: 60em;
+    max-width: 55em;
 }
 
 
@@ -109,9 +109,27 @@ body {
 
 
 /*
- * Footer
- */
+* Footer
+*/
 
 .mastfoot {
     color: rgba(255, 255, 255, .5);
+}
+
+
+/*
+ * CARD
+ */
+
+.card-block {
+    color: black;
+    text-align: left;
+}
+
+.auth-links a {
+    color: black;
+}
+
+.register-text {
+    text-align: right;
 }
