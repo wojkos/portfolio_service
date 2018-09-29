@@ -1,7 +1,6 @@
+-if logged_in?(:site_admin)
+  .col-sm-12
+    = link_to('New Post', new_post_path, class: 'btn btn-success')
 .col-sm-8.blog-main
   = render @posts
-
-  %nav.blog-pagination
-    %a.btn.btn-outline-primary{:href => "#"} Older
-    %a.btn.btn-outline-secondary.disabled{:href => "#"} 
-  = link_to('New Post', new_post_path) if logged_in?(:site_admin)
+  = paginate @posts, theme: 'twitter-bootstrap-4'

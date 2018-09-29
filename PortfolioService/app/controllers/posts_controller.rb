@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_status]
   layout 'blog'
-  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all, message: 'You shall not pass'
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, site_admin: :all, message: 'You shall not pass'
 
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).per(5)
     @page_title = 'My blog | Wojciech Kostański'
   end
 
