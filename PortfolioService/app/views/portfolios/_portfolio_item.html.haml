@@ -1,14 +1,5 @@
-%p 
-  = link_to(portfolio_item.title, portfolio_show_path(portfolio_item))
-  %br
-  =portfolio_item.subtitle
-  %br
-  =portfolio_item.body
-  %br
-  =image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?
-  %br
-  = link_to('Edit portfolio_item', edit_portfolio_path(portfolio_item)) if logged_in?(:site_admin)
-  = link_to('Remove', 
-            portfolio_item,
-            method: :delete,
-            data: { confirm: 'Are you sure?' }) if logged_in?(:site_admin)
+.card
+  = image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil?
+  %p.card-text
+    %span= link_to portfolio_item.title, portfolio_show_path(portfolio_item)
+    = portfolio_item.subtitle

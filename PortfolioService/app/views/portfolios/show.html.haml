@@ -1,14 +1,14 @@
-=image_tag @portfolio_item.main_image unless @portfolio_item.main_image.nil?
-%h1 
-  = @portfolio_item.title
-%h3
-  = @portfolio_item.subtitle
-%p
-  = @portfolio_item.body
-%h2 Used technologies:
-
--@portfolio_item.technologies.each do |t|
-  %p
-    = t.name
-
-=link_to('Back', portfolios_path)
+.container
+  .row
+    .col-md-7
+      = image_tag @portfolio_item.main_image
+    .col-md-5
+      %h1= @portfolio_item.title
+      %hr/
+      %em= @portfolio_item.subtitle
+      %p= @portfolio_item.body
+      %hr/
+      %h3 Technologies Used:
+      - @portfolio_item.technologies.each do |t|
+        %p= t.name
+  =link_to('Back', portfolios_path)
