@@ -37,7 +37,7 @@ puts 'Created 10 skills'
     subtitle: "Portfolio subtitle #{portfolio_item}",
     body: 'Lorem ipsum doloros edum noe dritut bre. Goden nolo fis est duri.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis eros eget justo facilisis tempus id id risus. Pellentesque orci est, pulvinar in vestibulum eu, mattis et nulla. Praesent bibendum nisl eget justo bibendum blandit. Fusce sit amet erat sed quam finibus fermentum in nec risus. Sed dui eros, convallis nec fermentum imperdiet, volutpat venenatis sapien. Aliquam porta arcu in placerat malesuada. Integer a sagittis neque. Fusce suscipit eget mauris quis auctor. Cras nec risus nec nisl convallis viverra. Vestibulum convallis odio a luctus scelerisque. Phasellus sed pretium mauris. Mauris non ante nec turpis viverra sollicitudin.',
     main_image: 'http://placehold.it/600x400',
-    thumb_image: 'http://placehold.it/350x150'
+    thumb_image: 'http://placehold.it/350x200'
   )
 end
 
