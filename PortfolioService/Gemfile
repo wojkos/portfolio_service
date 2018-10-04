@@ -44,6 +44,13 @@ gem "font-awesome-rails"
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
+# images upload
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'carrierwave-aws'
+gem 'dotenv-rails'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
