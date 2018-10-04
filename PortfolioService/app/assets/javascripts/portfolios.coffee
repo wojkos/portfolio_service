@@ -21,7 +21,6 @@ ready = ->
         id: $(this).data('id')
         position: i + 1
       return
-    console.log(updated_order)
     $.ajax
       type: 'PUT'
       url: '/portfolios/sort'

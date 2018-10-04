@@ -10,7 +10,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body.text-center
     .cover-container.d-flex.w-100.h-100.p-3.mx-auto.flex-column
-      #background
+      = video_tag('tree.mp4', id: 'background', autoplay: true, loop: true, muted: true, poster: 'home.jpg')
+      -# #background
       = render 'shared/navbar_home'
       %p.notice= notice
       %p.alert= alert

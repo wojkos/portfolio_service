@@ -1,14 +1,15 @@
+# Controler for display
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_portfolio_item, only: %i[show edit update destroy]
   layout 'portfolio'
-  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all, message: 'You shall not pass'
+  access all: %i[show index], user: { except: %i[destroy new create update edit sort] }, site_admin: :all, message: 'You shall not pass'
 
   def index
     @portfolio_items = Portfolio.by_position
   end
 
   def sort
-    params[:order].each do |key,value|
+    params[:order].each do |_key, value|
       Portfolio.find(value[:id]).update(position: value[:position])
     end
   end
@@ -56,18 +57,17 @@ class PortfoliosController < ApplicationController
   end
 
   private
-    def set_portfolio_item
-      @portfolio_item = Portfolio.friendly.find(params[:id])
-    end
 
-    def portfolio_item_params
-      params.require(:portfolio).permit(:title,
-                                        :subtitle,
-                                        :body,
-                                        :thumb_image,
-                                        :main_image,
-                                        technologies_attributes: [:name])
-    end
+  def set_portfolio_item
+    @portfolio_item = Portfolio.friendly.find(params[:id])
+  end
 
-
+  def portfolio_item_params
+    params.require(:portfolio).permit(:title,
+                                      :subtitle,
+                                      :body,
+                                      :thumb_image,
+                                      :main_image,
+                                      technologies_attributes: [:name])
+  end
 end
