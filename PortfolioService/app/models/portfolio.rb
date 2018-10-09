@@ -3,6 +3,7 @@ class Portfolio < ApplicationRecord
   friendly_id :title, use: :slugged
   has_many :technologies
   accepts_nested_attributes_for :technologies, 
+                                allow_destroy: true,
                                 reject_if: lambda { |x| x['name'].blank? }
 
   validates_presence_of :title, :body
