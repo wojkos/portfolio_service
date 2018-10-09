@@ -7,3 +7,14 @@ S3_BUCKET_NAME
 AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
 AWS_REGION
+
+## Used gems
+- petergate - for user authorization
+- kaminari - for paggination in blog section
+- bootstrap4-kaminari-views - bootstrap styling pagination
+- carrierwave
+- mini_magick - pictures transformation
+- carrierwave-aws
+- dotenv-rails - for create .env file to store credentials
+- Cocoon - for nested form
+- Gritter - nice flash alerts and notification
