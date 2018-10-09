@@ -1,7 +1,7 @@
 = form_with(model: post, local: true) do |form|
   - if post.errors.any?
     -post.errors.full_messages.each do |error|
-      =js add_gritter(error, title: 'Error', sticky: false, position: :bottom_right)
+      = alert_generator(error)
 
   .form-group
     = form.label :title
