@@ -1,0 +1,10 @@
+.inner.cover
+  %h1 Rails News
+
+  .row
+    -@tweets.each do |tweet|
+      .col-md-6
+        .tech-news
+          .card
+            = tweet
+            
