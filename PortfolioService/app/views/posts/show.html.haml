@@ -8,14 +8,8 @@
     = @post.body 
 
   = link_to('Back', posts_path)
-  -# comment form
-  = unless current_user.is_a? GuestUser
-    =form_for @coment, url: '#' do |f|
-      .form-group
-        =f.label :content
-        = f.text_area :content, class: 'form-control'
-      = f.submit 'Post Comment', class: 'btn btn-primary'
-  -# coments
-  = render @post.comments
+  = render 'comments/form'
+  %div#comments{ 'data-blog-id': @blog.id}
+    = render @post.comments
  
             
