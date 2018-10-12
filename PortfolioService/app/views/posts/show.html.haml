@@ -9,7 +9,7 @@
 
   = link_to('Back', posts_path)
   = render 'comments/form'
-  %div#comments{ 'data-blog-id': @blog.id}
+  %div#comments{ 'data-post-id': @post.id}
     = render @post.comments
  
             
