@@ -8,14 +8,16 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
   get 'tech-news', to: 'pages#tech_news'
-  
+
   resources :posts, except: [:index] do
     member do
       get :toggle_status
     end
   end
   get 'blog', to: 'posts#index'
-  
+
+  mount ActionCable.server => '/cable'
+
   root to: 'pages#home'
   get '*path', to: redirect('/')
 end
