@@ -4,7 +4,11 @@ class PostsController < ApplicationController
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, site_admin: :all, message: 'You shall not pass'
 
   def index
-    @posts = Post.page(params[:page]).per(5)
+    if logged_in?(:site_admin)
+      @posts = Post.recent.page(params[:page]).per(5)
+    else
+      @posts = Post.recent.published.page(params[:page]).per(5)
+    end
     @page_title = 'My blog | Wojciech Kostański'
   end
 

@@ -9,4 +9,7 @@ class Post < ApplicationRecord
 
   validates_presence_of :title, :body
 
+  def self.recent
+    order('created_at DESC')
+  end
 end
