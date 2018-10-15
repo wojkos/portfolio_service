@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 
   enum status: { draft: 0, published: 1 }
 
-  validates_presence_of :title, :body
+  validates_presence_of :title, :body, :topic_id
 
   def self.recent
     order('created_at DESC')
