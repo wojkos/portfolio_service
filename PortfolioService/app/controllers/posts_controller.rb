@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :destroy, :toggle_status]
+  before_action :set_sitebar_topics, except: [:update, :create, :destroy, :toggle_status]
   layout 'blog'
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, site_admin: :all, message: 'You shall not pass'
 
@@ -71,6 +72,10 @@ class PostsController < ApplicationController
   private
     def set_post
       @post = Post.friendly.find(params[:id])
+    end
+
+    def set_sitebar_topics
+      @sitebar_topics = Topic.with_published_posts
     end
 
     def post_params
