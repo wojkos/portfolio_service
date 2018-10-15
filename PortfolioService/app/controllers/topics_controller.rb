@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   layout 'blog'
   
   def index
-    @topics = Topic
+    @topics = Topic.all
   end
 
   def show

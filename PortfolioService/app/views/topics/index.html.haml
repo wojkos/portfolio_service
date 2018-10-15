@@ -1,3 +1,17 @@
 .col-sm-8.blog-main
   %h1 Topics
+  %br
+  %table.table
+    %thead.thead-dark
+      %tr
+        %td Title
+        %td Posts count
+        %td
+    %tbody
+      -@topics.each do |topic|
+        %tr
+          %td #{topic.title}
+          %td #{topic.posts.count}
+          %td
+            = link_to 'Show Posts', topic_path(topic.id), class: 'btn'
   
