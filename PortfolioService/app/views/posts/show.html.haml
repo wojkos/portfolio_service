@@ -5,7 +5,7 @@
     = link_to('Home', root_path, class: 'breadcrumb-item')
     = link_to(@post.topic.title, topic_path(@post.topic), class: 'breadcrumb-item')
     %span.breadcrumb-item.active #{@post.title}
-    %span.float-right
+    %span.ml-auto
       = link_to fa_icon('pencil-square-o'), edit_post_path(@post) if logged_in?(:site_admin)
       = link_to fa_icon('trash'), @post, method: :delete, data: {confirm: 'Are you sure?'} if logged_in?(:site_admin)
   %p
