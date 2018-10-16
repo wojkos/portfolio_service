@@ -7,6 +7,11 @@
     = form.label :title
     = form.text_field :title, id: :post_title, class: 'form-control'
   .form-group
+    = form.label :status, 'Draft'
+    = form.radio_button :status, 'Draft'
+    = form.label :status, 'Published'
+    = form.radio_button :status, 'published'
+  .form-group
     = form.label :topic_id
     = form.collection_select(:topic_id, Topic.all, :id, :title, {selected: post.topic.id, include_blank: true}, class: 'form-control')
   .form-group

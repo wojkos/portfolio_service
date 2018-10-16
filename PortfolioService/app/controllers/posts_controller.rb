@@ -81,7 +81,8 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title,
                                   :body,
-                                  :topic_id
+                                  :topic_id,
+                                  :status
                                   )
     end
 end
