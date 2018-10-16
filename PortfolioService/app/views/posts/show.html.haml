@@ -1,10 +1,13 @@
 .col-sm-8.blog-main
   %h2
     = @post.title
-  %p 
-    = @post.topic.title
-  = link_to 'Edit', edit_post_path(@post) if logged_in?(:site_admin)
-
+  %nav.breadcrumb
+    = link_to('Home', root_path, class: 'breadcrumb-item')
+    = link_to(@post.topic.title, topic_path(@post.topic), class: 'breadcrumb-item')
+    %span.breadcrumb-item.active #{@post.title}
+    %span.float-right
+      = link_to fa_icon('pencil-square-o'), edit_post_path(@post) if logged_in?(:site_admin)
+      = link_to fa_icon('trash'), @post, method: :delete, data: {confirm: 'Are you sure?'} if logged_in?(:site_admin)
   %p
     %strong Body:
     = markdown(@post.body) 
