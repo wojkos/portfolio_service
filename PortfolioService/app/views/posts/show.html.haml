@@ -7,7 +7,7 @@
 
   %p
     %strong Body:
-    = @post.body 
+    = markdown(@post.body) 
 
   = link_to('Back', posts_path)
   = render 'comments/form'
