@@ -1,5 +1,6 @@
-.card{'data-id': portfolio_item.id}
-  = image_tag portfolio_img(portfolio_item.thumb_image, 'thumb')
-  %p.card-text
-    %span= link_to portfolio_item.title, portfolio_show_path(portfolio_item)
-    = portfolio_item.subtitle
+.col-md-4
+  .card{'data-id': portfolio_item.id}
+    = image_tag(portfolio_img(portfolio_item.thumb_image, 'thumb'), width: '100%')
+    %p.card-text
+      %span= link_to portfolio_item.title, portfolio_show_path(portfolio_item)
+      = portfolio_item.subtitle
