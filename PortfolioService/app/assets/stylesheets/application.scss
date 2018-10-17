@@ -171,3 +171,22 @@ body {
         padding:20px;
     }
 }
+.app-card-container {
+    color: black;
+    text-align: left;
+  }
+.app-card-container > .card {
+    padding: 40px;
+    a {
+        color: grey;
+    }
+}
+.card-block {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+.skills >.skill {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
