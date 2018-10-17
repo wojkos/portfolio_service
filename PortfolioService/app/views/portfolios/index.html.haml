@@ -1,4 +1,5 @@
 .album.text-muted
   .container
+    = source_helper('alert alert-warning')
     .row{class: "#{'sortable' if logged_in?(:site_admin)}"}
       = render partial: 'portfolio_item', collection: @portfolio_items

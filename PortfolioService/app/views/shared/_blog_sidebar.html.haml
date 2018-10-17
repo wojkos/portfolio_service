@@ -1,10 +1,11 @@
 .col-sm-3.offset-sm-1.blog-sidebar
-  .sidebar-module.sidebar-module-inset
+  .sidebar-module.sidebar-module-inset.alert
     %h4 About
     %p
       Etiam porta
       %em sem malesuada magna
       mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+  = source_helper('alert alert-info sidebar-module mt-10')
   .sidebar-module
     %h4 Category
     -@sitebar_topics.each do |topic|
