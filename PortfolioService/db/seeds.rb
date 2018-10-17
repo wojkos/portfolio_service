@@ -1,7 +1,27 @@
-Skill.create!(title: 'Rails', skill_percent: 60 )
-Skill.create!(title: 'HTML', skill_percent: 80 )
-Skill.create!(title: 'Wordpress', skill_percent: 70 )
+User.create!(
+  email: 'admin@asdf.pl',
+  password:  '123456',
+  password_confirmation: '123456',
+  name: 'Admin User',
+  roles: 'site_adin'
+)
+puts 'Created site admin'
+
+User.create!(
+  email: 'user@asdf.pl',
+  password:  '123456',
+  password_confirmation: '123456',
+  name: 'Regular User',
+  roles: 'user'
+)
+puts 'Created site user'
+
+
+Skill.create!(title: 'Ruby on Rails', skill_percent: 60 )
+Skill.create!(title: 'HTML', skill_percent: 70 )
+Skill.create!(title: 'Wordpress', skill_percent: 50 )
 Skill.create!(title: 'Vue', skill_percent: 30 )
+Skill.create!(title: 'Python', skill_percent: 20 )
 
 puts 'Created 4 skills'
 
