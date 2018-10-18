@@ -13,7 +13,7 @@
     = markdown(@post.body) 
 
   = link_to('Back', posts_path)
-  = render 'comments/form'
+  = render 'comments/comment_form'
   %div#comments{ 'data-post-id': @post.id}
     = render @post.comments
  

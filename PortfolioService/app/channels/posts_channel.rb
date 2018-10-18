@@ -1,9 +1,9 @@
 class PostsChannel < ApplicationCable::Channel
-  def subsribed
+  def subscribed
     stream_from "posts_#{params['post_id']}_channel"
   end
-  
-  def unsubsribed
+
+  def unsubscribed
   end
 
   def send_comment(data)
