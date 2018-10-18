@@ -13,7 +13,7 @@
     = form.radio_button :status, 'published'
   .form-group
     = form.label :topic_id
-    = form.collection_select(:topic_id, Topic.all, :id, :title, {selected: post.topic.id, include_blank: true}, class: 'form-control')
+    = form.collection_select(:topic_id, Topic.all, :id, :title, {selected: post.topic.id if post.topic, include_blank: true}, class: 'form-control')
   .form-group
     = form.label :body
     = form.text_area :body, id: :post_body, class: 'form-control', rows: 15
