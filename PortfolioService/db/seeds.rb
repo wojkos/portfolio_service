@@ -3,7 +3,7 @@ User.create!(
   password:  '123456',
   password_confirmation: '123456',
   name: 'Admin User',
-  roles: 'site_adin'
+  roles: 'site_admin'
 )
 puts 'Created site admin'
 
