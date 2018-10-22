@@ -69,6 +69,12 @@ class PostsController < ApplicationController
     redirect_to blog_path, notice: 'Post status has been updated.'
   end
 
+  protected
+    def resource_not_found
+      message ='Post could not be found'
+      redirect_to blog_path, notice: message
+    end
+  
   private
     def set_post
       @post = Post.friendly.find(params[:id])
